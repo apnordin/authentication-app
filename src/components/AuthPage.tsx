@@ -63,10 +63,33 @@ const AuthPage: React.FC<AuthPageProps> = ({isSignup, setIsSignup}) => {
   };
 
   const LoginPage = () => {
-    const placeholdervariable: string = "hello";
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const handleSubmit = (e: {preventDefault: () => void}) => {
+      e.preventDefault();
+      console.log(email, password);
+    };
+
     return (
       <>
         <h1>Log in to your account</h1>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            className="login-input"
+            placeholder="Email"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className="login-input"
+            placeholder="Last Name"
+            type="text"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="sign-up">Log in</button>
+        </form>
       </>
     );
   };
