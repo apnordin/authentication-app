@@ -83,8 +83,8 @@ const AuthPage: React.FC<AuthPageProps> = ({isSignup, setIsSignup}) => {
           />
           <input
             className="login-input"
-            placeholder="Last Name"
-            type="text"
+            placeholder="Password"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
